@@ -11,7 +11,17 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    protected boolean isSulfuras() {
-        return true;
+    protected void updateSellInDays() {
+        // do nothing
+    }
+
+    @Override
+    protected void updateQualityAfterExpiration() {
+        // do nothing
+    }
+
+    @Override
+    protected void updateQuality() {
+        // do nothing
     }
 }
