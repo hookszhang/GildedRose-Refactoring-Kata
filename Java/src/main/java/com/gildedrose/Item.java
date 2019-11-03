@@ -32,13 +32,15 @@ public class Item {
         }
     }
 
-    protected void updateQuality() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
+    protected void updateQualityAfterExpiration() {
+        decreaseQuality();
     }
 
-    protected void updateQualityAfterExpiration() {
+    protected void updateQuality() {
+        decreaseQuality();
+    }
+
+    private void decreaseQuality() {
         if (quality > 0) {
             quality = quality - 1;
         }
@@ -50,5 +52,11 @@ public class Item {
 
     protected void updateSellInDays() {
         sellIn = sellIn - 1;
+    }
+
+    protected void increaseQuality() {
+        if (quality < 50) {
+            quality = quality + 1;
+        }
     }
 }
