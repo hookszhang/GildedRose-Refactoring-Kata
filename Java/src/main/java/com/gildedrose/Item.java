@@ -8,23 +8,11 @@ public class Item {
 
     public int quality;
 
-    public static Item createBackstagePass(int sellIn, int quality) {
-        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
-    }
-
-    public static Item createSulfuras(int sellIn, int quality) {
-        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
-    public static Item createAgedBrie(int sellIn, int quality) {
-        return new Item("Aged Brie", sellIn, quality);
-    }
-
     public static Item createNormalItem(String name, int sellIn, int quality) {
         return new Item(name, sellIn, quality);
     }
 
-    private Item(String name, int sellIn, int quality) {
+    protected Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
@@ -35,16 +23,16 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+    protected boolean isBackstagePass() {
+        return false;
     }
 
-    boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
+    protected boolean isSulfuras() {
+        return false;
     }
 
-    boolean isAgedBrie() {
-        return name.equals("Aged Brie");
+    protected boolean isAgedBrie() {
+        return false;
     }
 
     void passOneDay() {
